@@ -1,0 +1,55 @@
+# Общие системные файлы
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+~$*
+
+# Игнорирование всей папки .idea (для JetBrains IDE)
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Игнорирование всей папки .vscode (для VS Code)
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Файлы операционных систем
+*.bak
+*.tmp
+*.temp
+
+# Логи
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Папки зависимостей
+node_modules/
+vendor/
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Папка сборки
+dist/
+build/
+out/
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Кэш и временные файлы
+.cache/
+.tmp/
+temp/
