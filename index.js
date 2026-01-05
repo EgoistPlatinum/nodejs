@@ -1,3 +1,3 @@
-const sqlite = require('sqlite3')
-const postgres = require('pg')
+const generateId = require("./id");
 
+console.log("New ID:", generateId);
