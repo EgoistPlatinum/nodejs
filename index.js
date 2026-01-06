@@ -1,3 +1,4 @@
 const generateId = require("./id");
 
-console.log("New ID:", generateId);
+console.log(generateId);
+console.log("NODE_ENV", process.env.NODE_ENV === "production");
