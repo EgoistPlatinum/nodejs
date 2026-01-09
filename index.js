@@ -19,8 +19,34 @@ nunjucks.configure("views", {
 // njk
 app.set("view engine", "njk");
 
+// app.use((req, res, next) => {
+//   if (
+//     !req.headers["content-type"] ||
+//     !req.headers["content-type"].match(/json/)
+//   ) {
+//     return next();
+//   }
+//
+//   let data = ''
+//   req.on('data', chunk => {
+//     data += chunk
+//   })
+//   req.on('end', () => {
+//     try {
+//       req.body = data ? JSON.parse(data) : {}
+//       next()
+//     } catch (e) {
+//       res.status(400).send(e.message)
+//     }
+//   })
+// })
+
+app.use(express.json());
+app.use(express.static("public"));
+
 app.post("/inc", (req, res) => {
-  count++;
+  const data = req.body;
+  count += data.value || 1;
   res.json({ count });
 });
 
