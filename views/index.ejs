@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>(<%= count %>)</title>
+    <%- uikitCss %>
+</head>
+<body>
+<section class="uk-container">
+    <h1>Count: <%= count %></h1>
+
+    <% if(count > 10) {%>
+        <h2>WOAH!</h2>
+    <% } %>
+
+    <p>
+        <button id="button">Increment</button>
+    </p>
+    <p>This page is using UIKit: <code><%= uikitCss %></code></p>
+
+    <% if(count > 0) {%>
+        <ul>
+            <% for(var i = 0; i < count; i++) {%>
+                <li><%= 99 - i %> bottles of beer on the wall </li>
+            <% } %>
+        </ul>
+    <% } %>
+
+</section>
+<script>
+  document.getElementById('button').addEventListener('click', () => {
+    fetch('/inc', {method: 'post'}).then(() => location.reload())
+  })
+</script>
+</body>
+</html>
